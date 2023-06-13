@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsageStatAdapter extends RecyclerView.Adapter<UsageStatVH> {
+    /*UsageStatAdapter class responsible for, handling the creation, binding, and click
+    events of individual items in the list. */
 
     private List<UsageStatsWrapper> usageStatsList;
     private String packageName;

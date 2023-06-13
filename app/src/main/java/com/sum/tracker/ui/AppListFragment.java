@@ -30,6 +30,9 @@ import java.util.List;
 
 public class AppListFragment extends Fragment implements UsageContract.View, UsageStatAdapter.OnItemClickListener {
 
+    /* this class serves as the main UI fragment for displaying the list of installed applications.
+     It handles user interactions, communicates with the presenter to retrieve the usage statistics,
+     and navigates to the AppUsageFragment when an item is clicked.*/
     private ProgressBar progressBar;
     private TextView permissionMessage;
     private UsageContract.Presenter presenter;

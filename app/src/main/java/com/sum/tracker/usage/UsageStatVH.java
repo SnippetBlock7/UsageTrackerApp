@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sum.tracker.R;
 
 public class UsageStatVH extends RecyclerView.ViewHolder {
-
+    /* viewholder class of recyclerview */
     private ImageView appIcon;
     private TextView appName;
     private UsageStatsWrapper usageStatsWrapper;

@@ -13,6 +13,8 @@ public final class UsageStatsWrapper implements Comparable<UsageStatsWrapper> {
 
     private final String packageName;
 
+    /* It provides getter methods to retrieve the usageStats, app icon, app name, and package name.*/
+
     public UsageStatsWrapper(UsageStats usageStats, Drawable appIcon, String appName,String packageName) {
         this.usageStats = usageStats;
         this.appIcon = appIcon;

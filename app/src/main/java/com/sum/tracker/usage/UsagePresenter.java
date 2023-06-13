@@ -63,6 +63,7 @@ public class UsagePresenter implements UsageContract.Presenter {
         return mode == MODE_ALLOWED;
     }
 
+    /* getInstalledAppList() method retrieves the list of installed application package names */
     private List<String> getInstalledAppList(){
         List<ApplicationInfo> infos = packageManager.getInstalledApplications(flags);
         List<String> installedApps = new ArrayList<>();
@@ -72,6 +73,9 @@ public class UsagePresenter implements UsageContract.Presenter {
         return installedApps;
     }
 
+    /* buildUsageStatsWrapper() method builds a list of UsageStatsWrapper objects from the installed application package
+    names and usage statistics. It checks if a matching usage statistic is found for each package name and
+    creates a UsageStatsWrapper object accordingly. The resulting list is sorted based on the usage time. */
     private List<UsageStatsWrapper> buildUsageStatsWrapper(List<String> packageNames, List<UsageStats> usageStatses) {
         List<UsageStatsWrapper> list = new ArrayList<>();
         for (String name : packageNames) {
@@ -90,6 +94,8 @@ public class UsagePresenter implements UsageContract.Presenter {
         return list;
     }
 
+    /*The fromUsageStat() methods create a UsageStatsWrapper object from a package name or a
+    UsageStats instance. It retrieves the application icon, label, and package name using the PackageManager. */
     private UsageStatsWrapper fromUsageStat(String packageName) throws IllegalArgumentException {
         try {
             ApplicationInfo ai = packageManager.getApplicationInfo(packageName, 0);

@@ -35,6 +35,9 @@ import java.util.concurrent.TimeUnit;
 
 public class AppUsageFragment extends Fragment {
 
+    /*this class provides a user interface to display the application's name, usage time,
+     and toggle switch for setting the time limit. It handles user interactions and manages
+     preferences related to the time limit and usage of the application.*/
     private static final String PREFS_NAME = "AppUsageDetails";
     private static final String TOGGLE_STATE_KEY_PREFIX = "ToggleState_";
     private static final String TIME_LIMIT_KEY_PREFIX = "TimeLimit_";

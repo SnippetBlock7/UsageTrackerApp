@@ -23,6 +23,12 @@ public class TimeLimitExceededReceiver extends BroadcastReceiver {
     private static final int PERMISSION_REQUEST_CODE = 1;
     private static final String CHANNEL_ID = "channel_id";
 
+    /*onReceive() method, retrieves the name of the application from the received intent.
+    It checks the API level to determine which notification builder to use.
+    If the API level is 26 or above, it calls the createNotificationChannel() method to
+    create a notification channel for the notification.
+    It then calls the appropriate createNotificationBuilder() method based on the API level to
+    create the notification builder object.*/
     @Override
     public void onReceive(Context context, Intent intent) {
         // Get the name of the application from the intent
@@ -84,6 +90,7 @@ public class TimeLimitExceededReceiver extends BroadcastReceiver {
         return builder;
     }
 
+    //method to display the notification using the created builder.
     public static void showNotification(Context context, NotificationCompat.Builder builder) {
         // Show the notification
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);

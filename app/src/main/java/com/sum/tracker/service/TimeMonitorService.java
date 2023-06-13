@@ -37,6 +37,8 @@ public class TimeMonitorService extends Service {
     private UsageStatsManager usageStatsManager;
     private SharedPreferences sharedPreferences;
 
+    /* onCreate() method, it initializes the alarm manager, shared preferences, alarm intent,
+      and the UsageStatsManager for monitoring app usage statistics.*/
     @Override
     public void onCreate() {
         super.onCreate();
@@ -58,6 +60,10 @@ public class TimeMonitorService extends Service {
         usageStatsManager = (UsageStatsManager) getSystemService(Context.USAGE_STATS_SERVICE);
     }
 
+    /* onStartCommand() method, it receives the name of the application and the time
+    limit from the intent. It calculates the trigger time based on the current time and the time limit.
+    It starts the service in the foreground by calling startForeground() and passing a notification
+    created using the createNotification() method*/
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Get the name from the intent
@@ -128,6 +134,8 @@ public class TimeMonitorService extends Service {
         return builder.build();
     }
 
+    /* createNotificationChannel() method is called for Android versions Oreo
+     and above to create a notification channel with the specified channel name, description, and importance.*/
     @RequiresApi(Build.VERSION_CODES.O)
     private void createNotificationChannel() {
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
